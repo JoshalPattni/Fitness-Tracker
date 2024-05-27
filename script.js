@@ -19,14 +19,26 @@ function populateGoalsTable() {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.addEventListener('change', function() {
+            updateScore();
             row.style.backgroundColor = checkbox.checked ? 'lightgreen' : 'salmon';
         });
         metCell.appendChild(checkbox);
     }
 }
 
+function updateScore() {
+    let score = 0;
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            score += 1;
+        }
+    });
+    document.getElementById('score').textContent = score;
+}
+
 function saveData() {
     // Placeholder for saving data logic
     console.log('Data saved!');
-    // This would involve storing data in localStorage or using a server-side database.
+    // This would involve storing data in localStorage or a server-side database.
 }
