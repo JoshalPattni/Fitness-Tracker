@@ -1,4 +1,3 @@
-// Function to save user data
 function saveData() {
     let data = {
         joshal: {
@@ -8,60 +7,26 @@ function saveData() {
             waist: document.getElementById('joshal-waist').value,
             stomach: document.getElementById('joshal-stomach').value,
             chest: document.getElementById('joshal-chest').value,
-            goals: {
-                month1: {
-                    start: document.getElementById('joshal-month1-start').value,
-                    end: document.getElementById('joshal-month1-end').value,
-                    weight: document.getElementById('joshal-month1-weight').value,
-                    waist: document.getElementById('joshal-month1-waist').value,
-                    stomach: document.getElementById('joshal-month1-stomach').value,
-                    chest: document.getElementById('joshal-month1-chest').value
-                }
-            },
-            reward: document.getElementById('joshal-reward').value
         },
         poonam: {
             weight: document.getElementById('poonam-weight').value,
             waist: document.getElementById('poonam-waist').value,
             stomach: document.getElementById('poonam-stomach').value,
             bum: document.getElementById('poonam-bum').value,
-            goals: {
-                month1: {
-                    start: document.getElementById('poonam-month1-start').value,
-                    end: document.getElementById('poonam-month1-end').value,
-                    weight: document.getElementById('poonam-month1-weight').value,
-                    waist: document.getElementById('poonam-month1-waist').value,
-                    stomach: document.getElementById('poonam-month1-stomach').value,
-                    bum: document.getElementById('poonam-month1-bum').value
-                }
-            },
-            reward: document.getElementById('poonam-reward').value
-        }
+        },
+        joshalReward: document.getElementById('joshal-reward').value,
+        poonamReward: document.getElementById('poonam-reward').value
     };
 
-    // Save data to local storage
     localStorage.setItem('fitnessData', JSON.stringify(data));
-    alert('Data saved successfully!');
-    updateScores();
+    alert("Data saved successfully!");
 }
 
-// Function to update scores based on goals met (placeholder for real implementation)
-function updateScores() {
-    let joshalScore = parseInt(document.getElementById('joshal-score').textContent, 10);
-    let poonamScore = parseInt(document.getElementById('poonam-score').textContent, 10);
+function loadData() {
+    let retrievedData = localStorage.getItem('fitnessData');
+    if (retrievedData) {
+        let data = JSON.parse(retrievedData);
 
-    joshalScore++; // Increment scores for demonstration
-    poonamScore++;
-
-    document.getElementById('joshal-score').textContent = joshalScore;
-    document.getElementById('poonam-score').textContent = poonamScore;
-}
-
-// Load data from local storage when the page loads
-window.onload = function() {
-    const savedData = localStorage.getItem('fitnessData');
-    if (savedData) {
-        const data = JSON.parse(savedData);
         document.getElementById('joshal-weight').value = data.joshal.weight;
         document.getElementById('joshal-right-arm').value = data.joshal.rightArm;
         document.getElementById('joshal-left-arm').value = data.joshal.leftArm;
@@ -73,5 +38,34 @@ window.onload = function() {
         document.getElementById('poonam-waist').value = data.poonam.waist;
         document.getElementById('poonam-stomach').value = data.poonam.stomach;
         document.getElementById('poonam-bum').value = data.poonam.bum;
+
+        document.getElementById('joshal-reward').value = data.joshalReward;
+        document.getElementById('poonam-reward').value = data.poonamReward;
+    } else {
+        alert("No data found. Please enter and save your data.");
     }
+}
+
+function populateGoalsTable() {
+    let table = document.getElementById('goals-table');
+    for (let i = 1; i <= 6; i++) {
+        let row = table.insertRow();
+        let monthCell = row.insertCell(0);
+        monthCell.innerHTML = `Month ${i}`;
+        let inputs = ['weight', 'rightArm', 'leftArm', 'waist', 'stomach', 'chest', 'bum'];
+        inputs.forEach(input => {
+            let cell = row.insertCell();
+            let inputElement = document.createElement('input');
+            inputElement.type = 'number';
+            inputElement.min = 0;
+            inputElement.id = input + '-goal-' + i;
+            inputElement.placeholder = input;
+            cell.appendChild(inputElement);
+        });
+    }
+}
+
+window.onload = function() {
+    loadData();
+    populateGoalsTable();
 };
