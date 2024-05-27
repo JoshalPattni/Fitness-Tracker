@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Joshal and Poonam's Fitness Journey</h1>
-        
+    </header>
+    <main>
         <section class="measurements">
-            <div>
-                <h2>Joshal's Current Measurements</h2>
-                <input type="number" id="joshal-weight" placeholder="Weight (kg)">
-                <input type="number" id="joshal-right-arm" placeholder="Right Arm (cm)">
-                <input type="number" id="joshal-left-arm" placeholder="Left Arm (cm)">
-                <input type="number" id="joshal-waist" placeholder="Waist (cm)">
-                <input type="number" id="joshal-stomach" placeholder="Stomach (cm)">
-                <input type="number" id="joshal-chest" placeholder="Chest (cm)">
+            <h2>Current Measurements</h2>
+            <div class="measurement-group">
+                <h3>Joshal</h3>
+                <div class="input-group">
+                    <label for="joshal-weight">Weight (kg):</label>
+                    <input type="number" id="joshal-weight" placeholder="Enter weight">
+                </div>
+                <!-- Add other measurement inputs for Joshal -->
             </div>
-            <div>
-                <h2>Poonam's Current Measurements</h2>
-                <input type="number" id="poonam-weight" placeholder="Weight (kg)">
-                <input type="number" id="poonam-right-arm" placeholder="Right Arm (cm)">
-                <input type="number" id="poonam-left-arm" placeholder="Left Arm (cm)">
-                <input type="number" id="poonam-waist" placeholder="Waist (cm)">
-                <input type="number" id="poonam-stomach" placeholder="Stomach (cm)">
-                <input type="number" id="poonam-bum" placeholder="Bum (cm)">
+            <div class="measurement-group">
+                <h3>Poonam</h3>
+                <div class="input-group">
+                    <label for="poonam-weight">Weight (kg):</label>
+                    <input type="number" id="poonam-weight" placeholder="Enter weight">
+                </div>
+                <!-- Add other measurement inputs for Poonam -->
             </div>
         </section>
-
+        
         <section class="goals">
             <h2>Input Your Goals</h2>
             <table id="goals-table">
@@ -42,21 +42,27 @@
                 <!-- Rows will be added by JavaScript -->
             </table>
         </section>
-
+        
         <section class="rewards">
             <h2>Rewards</h2>
-            <div>
-                <label for="joshal-reward">Joshal's Reward:</label>
-                <input type="text" id="joshal-reward">
-                <label for="poonam-reward">Poonam's Reward:</label>
-                <input type="text" id="poonam-reward">
-                <p>Best of luck for this month, I hope you achieve your goal!</p>
+            <div class="reward-group">
+                <div class="reward-input">
+                    <label for="joshal-reward">Joshal's Reward:</label>
+                    <input type="text" id="joshal-reward" placeholder="Enter reward">
+                </div>
+                <div class="reward-input">
+                    <label for="poonam-reward">Poonam's Reward:</label>
+                    <input type="text" id="poonam-reward" placeholder="Enter reward">
+                </div>
+                <p class="good-luck">Best of luck for this month, I hope you achieve your goal!</p>
             </div>
         </section>
-
+        
         <button onclick="saveData()">Save Data</button>
-    </div>
-    
+    </main>
+    <footer>
+        <p class="score">Score: <span id="score">0</span></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
