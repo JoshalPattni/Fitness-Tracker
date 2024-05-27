@@ -3,58 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshal and Poonam's Fitness Journey</title>
+    <title>Joshal And Poonam's Fitness Journey</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Joshal and Poonam's Fitness Journey</h1>
+        <h1>Joshal And Poonam's Fitness Journey</h1>
     </header>
     <main>
         <section class="measurements">
-            <h2>Current Measurements</h2>
-            <div class="measurement-group">
-                <h3>Joshal</h3>
-                <div class="input-group">
-                    <label for="joshal-weight">Weight (kg):</label>
-                    <input type="number" id="joshal-weight" placeholder="Enter weight">
+            <h2>Enter Your Measurements</h2>
+            <div class="user-measurements">
+                <div class="measurement">
+                    <h3>Joshal</h3>
+                    <label for="joshal-right-arm">Right Arm (cm):</label>
+                    <input type="number" id="joshal-right-arm" placeholder="Enter measurement">
+                    <!-- Add other measurement inputs for Joshal -->
                 </div>
-                <!-- Add other measurement inputs for Joshal -->
-            </div>
-            <div class="measurement-group">
-                <h3>Poonam</h3>
-                <div class="input-group">
-                    <label for="poonam-weight">Weight (kg):</label>
-                    <input type="number" id="poonam-weight" placeholder="Enter weight">
+                <div class="measurement">
+                    <h3>Poonam</h3>
+                    <label for="poonam-waist">Waist (cm):</label>
+                    <input type="number" id="poonam-waist" placeholder="Enter measurement">
+                    <!-- Add other measurement inputs for Poonam -->
                 </div>
-                <!-- Add other measurement inputs for Poonam -->
             </div>
         </section>
         
         <section class="goals">
-            <h2>Input Your Goals</h2>
+            <h2>Set Your Goals</h2>
             <table id="goals-table">
-                <tr>
-                    <th>Month</th>
-                    <th>Goal Detail</th>
-                    <th>Met?</th>
-                </tr>
-                <!-- Rows will be added by JavaScript -->
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Goal Detail</th>
+                        <th>Met?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows for goals will be added dynamically -->
+                </tbody>
             </table>
         </section>
         
         <section class="rewards">
             <h2>Rewards</h2>
-            <div class="reward-group">
-                <div class="reward-input">
-                    <label for="joshal-reward">Joshal's Reward:</label>
-                    <input type="text" id="joshal-reward" placeholder="Enter reward">
-                </div>
-                <div class="reward-input">
-                    <label for="poonam-reward">Poonam's Reward:</label>
-                    <input type="text" id="poonam-reward" placeholder="Enter reward">
-                </div>
-                <p class="good-luck">Best of luck for this month, I hope you achieve your goal!</p>
+            <div class="reward-input">
+                <label for="joshal-reward">Joshal's Reward:</label>
+                <input type="text" id="joshal-reward" placeholder="Enter reward">
+            </div>
+            <div class="reward-input">
+                <label for="poonam-reward">Poonam's Reward:</label>
+                <input type="text" id="poonam-reward" placeholder="Enter reward">
             </div>
         </section>
         
@@ -62,6 +61,7 @@
     </main>
     <footer>
         <p class="score">Score: <span id="score">0</span></p>
+        <p class="winner">The winner gets a prize worth up to £500!</p>
     </footer>
     <script src="script.js"></script>
 </body>
