@@ -7,70 +7,51 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Joshal and Poonam's Fitness Journey</h1>
-    </header>
 
-    <section>
         <h2>Current Measurements</h2>
         <div>
             <h3>Joshal</h3>
-            <label for="joshal-weight">Weight (kg):</label>
-            <input type="number" id="joshal-weight" min="0"><br>
-            <label for="joshal-right-arm">Right Arm (cm):</label>
-            <input type="number" id="joshal-right-arm" min="0"><br>
-            <label for="joshal-left-arm">Left Arm (cm):</label>
-            <input type="number" id="joshal-left-arm" min="0"><br>
-            <label for="joshal-waist">Waist (cm):</label>
-            <input type="number" id="joshal-waist" min="0"><br>
-            <label for="joshal-stomach">Stomach (cm):</label>
-            <input type="number" id="joshal-stomach" min="0"><br>
-            <label for="joshal-chest">Chest (cm):</label>
-            <input type="number" id="joshal-chest" min="0"><br>
-        </div>
-        <div>
+            <input type="number" id="joshal-weight" placeholder="Weight (kg)">
+            <input type="number" id="joshal-right-arm" placeholder="Right Arm (cm)">
+            <input type="number" id="joshal-left-arm" placeholder="Left Arm (cm)">
+            <input type="number" id="joshal-waist" placeholder="Waist (cm)">
+            <input type="number" id="joshal-stomach" placeholder="Stomach (cm)">
+            <input type="number" id="joshal-chest" placeholder="Chest (cm)">
             <h3>Poonam</h3>
-            <label for="poonam-weight">Weight (kg):</label>
-            <input type="number" id="poonam-weight" min="0"><br>
-            <label for="poonam-waist">Waist (cm):</label>
-            <input type="number" id="poonam-waist" min="0"><br>
-            <label for="poonam-stomach">Stomach (cm):</label>
-            <input type="number" id="poonam-stomach" min="0"><br>
-            <label for="poonam-bum">Bum (cm):</label>
-            <input type="number" id="poonam-bum" min="0"><br>
+            <input type="number" id="poonam-weight" placeholder="Weight (kg)">
+            <input type="number" id="poonam-waist" placeholder="Waist (cm)">
+            <input type="number" id="poonam-stomach" placeholder="Stomach (cm)">
+            <input type="number" id="poonam-bum" placeholder="Bum (cm)">
         </div>
-    </section>
 
-    <section>
         <h2>Input Your Goals</h2>
         <table id="goals-table">
             <tr>
-                <th></th>
-                <th>Weight (kg)</th>
-                <th>Right Arm (cm)</th>
-                <th>Left Arm (cm)</th>
-                <th>Waist (cm)</th>
-                <th>Stomach (cm)</th>
-                <th>Chest (cm)</th>
-                <th>Bum (cm)</th>
+                <th>Month</th>
+                <th>Weight</th>
+                <th>Right Arm</th>
+                <th>Left Arm</th>
+                <th>Waist</th>
+                <th>Stomach</th>
+                <th>Chest</th>
+                <th>Bum</th>
+                <th>Goal Met?</th>
             </tr>
-            <!-- This section will be dynamically filled by JavaScript -->
         </table>
-    </section>
 
-    <section>
         <h2>Rewards</h2>
-        <label for="joshal-reward">Joshal's Reward:</label>
-        <input type="text" id="joshal-reward"><br>
-        <label for="poonam-reward">Poonam's Reward:</label>
-        <input type="text" id="poonam-reward"><br>
-    </section>
-
-    <button onclick="saveData()">Save Data</button>
-
-    <footer>
-        <p>Designed by Joshal and Poonam</p>
-    </footer>
+        <div>
+            <label for="joshal-reward">Joshal's Reward:</label>
+            <input type="text" id="joshal-reward">
+            <label for="poonam-reward">Poonam's Reward:</label>
+            <input type="text" id="poonam-reward">
+        </div>
+        
+        <button onclick="saveData()">Save Data</button>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
