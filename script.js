@@ -1,58 +1,38 @@
-document.addEventListener('DOMContentLoaded', function() {
-    populateGoalsTables();
-    loadData();
-});
+// Define variables to store goals for Joshal and Poonam
+let joshalGoals = [];
+let poonamGoals = [];
 
-function populateGoalsTables() {
-    const joshalTable = document.getElementById('joshal-goals-table');
-    const poonamTable = document.getElementById('poonam-goals-table');
-    const months = ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
+// Function to add a goal for either Joshal or Poonam
+function addGoal(user) {
+    const measurementName = document.getElementById(`${user}-measurement-name`).value;
+    const goal = document.getElementById(`${user}-goal`).value;
+    const table = document.getElementById(`${user}-goals-table`);
 
-    months.forEach((month, index) => {
-        // Populate Joshal's goals table
-        const joshalRow = joshalTable.insertRow();
-        joshalRow.insertCell(0).textContent = month;
-        const joshalGoalCell = joshalRow.insertCell(1);
-        const joshalGoalInput = document.createElement('input');
-        joshalGoalInput.type = 'number';
-        joshalGoalInput.placeholder = 'Enter goal';
-        joshalGoalInput.classList.add('goal-input');
-        joshalGoalCell.appendChild(joshalGoalInput);
+    // Create a new row
+    const newRow = table.insertRow();
+    const monthCell = newRow.insertCell(0);
+    const detailCell = newRow.insertCell(1);
+    const metCell = newRow.insertCell(2);
 
-        // Add Goal Met? cell for Joshal
-        const joshalGoalMetCell = joshalRow.insertCell(2);
-        const joshalGoalMetSelect = document.createElement('select');
-        joshalGoalMetSelect.innerHTML = '<option value="yes">Yes</option><option value="no">No</option><option value="same">Stayed the same</option>';
-        joshalGoalMetCell.appendChild(joshalGoalMetSelect);
+    // Get the current month and year
+    const now = new Date();
+    const month = now.toLocaleString('default', { month: 'long' });
+    const year = now.getFullYear();
 
-        // Add event listener to update score card
-        joshalGoalMetSelect.addEventListener('change', function() {
-            updateScoreCard();
-        });
-
-        // Populate Poonam's goals table
-        const poonamRow = poonamTable.insertRow();
-        poonamRow.insertCell(0).textContent = month;
-        const poonamGoalCell = poonamRow.insertCell(1);
-        const poonamGoalInput = document.createElement('input');
-        poonamGoalInput.type = 'number';
-        poonamGoalInput.placeholder = 'Enter goal';
-        poonamGoalInput.classList.add('goal-input');
-        poonamGoalCell.appendChild(poonamGoalInput);
-
-        // Add Goal Met? cell for Poonam
-        const poonamGoalMetCell = poonamRow.insertCell(2);
-        const poonamGoalMetSelect = document.createElement('select');
-        poonamGoalMetSelect.innerHTML = '<option value="yes">Yes</option><option value="no">No</option><option value="same">Stayed the same</option>';
-        poonamGoalMetCell.appendChild(poonamGoalMetSelect);
-
-        // Add event listener to update score card
-        poonamGoalMetSelect.addEventListener('change', function() {
-            updateScoreCard();
-        });
-    });
+    // Fill cells with data
+    monthCell.textContent = `${month} ${year}`;
+    detailCell.textContent = `${measurementName}: ${goal} cm/kg`;
+    metCell.innerHTML = `<select onchange="updateScoreCard()"><option value="yes">Yes</option><option value="no">No</option><option value="same">Stayed the same</option></select>`;
+    
+    // Update the corresponding goals array
+    if (user === 'joshal') {
+        joshalGoals.push({ measurementName, goal });
+    } else {
+        poonamGoals.push({ measurementName, goal });
+    }
 }
 
+// Function to update the score card
 function updateScoreCard() {
     const joshalScoreSpan = document.getElementById('joshal-score');
     const poonamScoreSpan = document.getElementById('poonam-score');
@@ -60,10 +40,9 @@ function updateScoreCard() {
     let joshalScore = 0;
     let poonamScore = 0;
 
-    const joshalGoalMetSelects = document.querySelectorAll('#joshal-goals-table select');
-    const poonamGoalMetSelects = document.querySelectorAll('#poonam-goals-table select');
-
-    joshalGoalMetSelects.forEach(select => {
+    // Iterate through Joshal's goals
+    joshalGoals.forEach(goal => {
+        const select = document.querySelector('#joshal-goals-table select:last-child');
         if (select.value === 'yes') {
             joshalScore++;
         } else if (select.value === 'no') {
@@ -71,7 +50,9 @@ function updateScoreCard() {
         }
     });
 
-    poonamGoalMetSelects.forEach(select => {
+    // Iterate through Poonam's goals
+    poonamGoals.forEach(goal => {
+        const select = document.querySelector('#poonam-goals-table select:last-child');
         if (select.value === 'yes') {
             poonamScore++;
         } else if (select.value === 'no') {
@@ -79,16 +60,4 @@ function updateScoreCard() {
         }
     });
 
-    joshalScoreSpan.textContent = joshalScore;
-    poonamScoreSpan.textContent = poonamScore;
-}
-
-function saveData() {
-    // Implement saving data functionality here
-    console.log("Data saved!");
-}
-
-function loadData() {
-    // Implement loading data functionality here
-    console.log("Data loaded!");
-}
+    //
