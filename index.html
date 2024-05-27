@@ -8,14 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>Joshal And Poonam's Fitness Journey</h1>
+        <h1 style="background-color: #333; color: #fff; padding: 20px; text-align: center;">Enter Your Measurements</h1>
     </header>
     <main>
         <section class="measurements">
-            <h2>Enter Your Measurements</h2>
             <div class="user-measurements">
                 <div class="measurement">
-                    <h3>Joshal</h3>
+                    <h2>Joshal</h2>
                     <label for="joshal-measurement-name">Measurement Name:</label>
                     <select id="joshal-measurement-name">
                         <option value="right-arm">Right Arm</option>
@@ -25,14 +24,14 @@
                         <option value="chest">Chest</option>
                     </select>
                     <label for="joshal-goal">Goal (cm/kg):</label>
-                    <input type="number" id="joshal-goal" placeholder="Enter goal">
+                    <input type="number" id="joshal-goal" placeholder="Add current measurement">
                     <button onclick="addGoal('joshal')">Add Goal</button>
                     <table class="goal-table" id="joshal-goals-table">
                         <!-- Goals will be added dynamically here -->
                     </table>
                 </div>
                 <div class="measurement">
-                    <h3>Poonam</h3>
+                    <h2>Poonam</h2>
                     <label for="poonam-measurement-name">Measurement Name:</label>
                     <select id="poonam-measurement-name">
                         <option value="chest">Chest</option>
@@ -41,7 +40,7 @@
                         <option value="bum">Bum</option>
                     </select>
                     <label for="poonam-goal">Goal (cm/kg):</label>
-                    <input type="number" id="poonam-goal" placeholder="Enter goal">
+                    <input type="number" id="poonam-goal" placeholder="Add current measurement">
                     <button onclick="addGoal('poonam')">Add Goal</button>
                     <table class="goal-table" id="poonam-goals-table">
                         <!-- Goals will be added dynamically here -->
