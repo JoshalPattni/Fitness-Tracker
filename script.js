@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     populateGoalsTables();
+    loadData();
 });
 
 function populateGoalsTables() {
@@ -68,6 +69,7 @@ function updateGoalStatus(row, goalValue, index, user) {
         metCell.textContent = 'Missed';
         updateScore(user, -1);
     }
+    saveData(); // Save data after updating goal status
 }
 
 function updateScore(user, points) {
@@ -78,7 +80,42 @@ function updateScore(user, points) {
 }
 
 function saveData() {
-    // Placeholder for saving data logic
-    console.log('Data saved!');
-    // This would involve storing data in localStorage or a server-side database.
+    // Save data to localStorage
+    const joshalGoals = [];
+    const poonamGoals = [];
+    const joshalTable = document.getElementById('joshal-goals-table');
+    const poonamTable = document.getElementById('poonam-goals-table');
+
+    // Populate joshal's goals
+    for (let i = 1; i < joshalTable.rows.length; i++) {
+        const goalValue = joshalTable.rows[i].cells[1].firstChild.value;
+        joshalGoals.push(goalValue);
+    }
+
+    // Populate poonam's goals
+    for (let i = 1; i < poonamTable.rows.length; i++) {
+        const goalValue = poonamTable.rows[i].cells[1].firstChild.value;
+        poonamGoals.push(goalValue);
+    }
+
+    localStorage.setItem('joshalGoals', JSON.stringify(joshalGoals));
+    localStorage.setItem('poonamGoals', JSON.stringify(poonamGoals));
+}
+
+function loadData() {
+    // Load data from localStorage
+    const joshalGoals = JSON.parse(localStorage.getItem('joshalGoals'));
+    const poonamGoals = JSON.parse(localStorage.getItem('poonamGoals'));
+    if (joshalGoals && poonamGoals) {
+        const joshalTable = document.getElementById('joshal-goals-table');
+        const poonamTable = document.getElementById('poonam-goals-table');
+
+        for (let i = 1; i < joshalTable.rows.length; i++) {
+            joshalTable.rows[i].cells[1].firstChild.value = joshalGoals[i - 1];
+        }
+
+        for (let i = 1; i < poonamTable.rows.length; i++) {
+            poonamTable.rows[i].cells[1].firstChild.value = poonamGoals[i - 1];
+        }
+    }
 }
