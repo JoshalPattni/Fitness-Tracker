@@ -1,10 +1,9 @@
-/* Add your CSS styles here */
-/* Placeholder styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    color: #333;
 }
 
 header {
@@ -22,12 +21,18 @@ section {
     margin-bottom: 20px;
 }
 
-.measurement, .reward-input {
-    margin-bottom: 10px;
+.measurement {
+    margin-bottom: 20px;
 }
 
-.goal-section {
-    margin-bottom: 20px;
+.measurement label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.measurement select, .measurement input[type="number"] {
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
 .goal-table {
