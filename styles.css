@@ -25,12 +25,16 @@ h2 {
     color: #009688;
 }
 
-.measurement-group {
+.measurement {
     margin-bottom: 20px;
 }
 
-.input-group {
-    margin-bottom: 10px;
+.measurement h3 {
+    color: #009688;
+}
+
+input[type="number"] {
+    width: 100px;
 }
 
 table {
@@ -66,19 +70,4 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-}
-
-.good-luck {
-    font-style: italic;
-    color: #009688;
-}
-
-.reward-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.reward-input {
-    flex: 1;
-    margin-right: 10px;
 }
