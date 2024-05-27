@@ -1,43 +1,32 @@
+document.addEventListener('DOMContentLoaded', function() {
+    populateGoalsTable();
+});
+
 function populateGoalsTable() {
     const table = document.getElementById('goals-table');
-    let measurements = ['weight', 'rightArm', 'leftArm', 'waist', 'stomach', 'chest', 'bum'];
-
     for (let i = 1; i <= 6; i++) {
         const row = table.insertRow();
-        const monthCell = row.insertCell(0);
-        monthCell.innerHTML = `Month ${i}`;
+        const monthCell = row.insertCell();
+        monthCell.textContent = `Month ${i}`;
+        
+        const goalCell = row.insertCell();
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Enter goal...';
+        goalCell.appendChild(input);
 
-        measurements.forEach((measurement, index) => {
-            const cell = row.insertCell();
-            const inputElement = document.createElement('input');
-            inputElement.type = 'number';
-            inputElement.min = 0;
-            inputElement.id = measurement + '-goal-' + i;
-            inputElement.placeholder = measurement;
-            cell.appendChild(inputElement);
+        const metCell = row.insertCell();
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.addEventListener('change', function() {
+            row.style.backgroundColor = checkbox.checked ? 'lightgreen' : 'salmon';
         });
-
-        const goalCheckCell = row.insertCell();
-        const checkBox = document.createElement('input');
-        checkBox.type = 'checkbox';
-        checkBox.id = 'goal-check-' + i;
-        checkBox.onchange = () => checkGoal(checkBox, row);
-        goalCheckCell.appendChild(checkBox);
-    }
-}
-
-function checkGoal(checkBox, row) {
-    if (checkBox.checked) {
-        row.style.backgroundColor = 'lightgreen';
-    } else {
-        row.style.backgroundColor = 'salmon';
+        metCell.appendChild(checkbox);
     }
 }
 
 function saveData() {
-    const data = {
-        joshal: {
-            weight: document.getElementById('joshal-weight').value,
-            rightArm: document.getElementById('joshal-right-arm').value,
-            leftArm: document.getElementById('joshal-left-arm').value,
-            waist: document.getElementById('joshal-waist').
+    // Placeholder for saving data logic
+    console.log('Data saved!');
+    // This would involve storing data in localStorage or using a server-side database.
+}
