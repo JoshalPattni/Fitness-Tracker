@@ -36,27 +36,4 @@ function updateScoreCard() {
     // Iterate through Joshal's goals
     const joshalGoalMetSelects = document.querySelectorAll('#joshal-goals-table .goal-met-select');
     joshalGoalMetSelects.forEach(select => {
-        const color = select.value === 'yes' ? 'green' : select.value === 'no' ? 'red' : 'orange';
-        select.style.backgroundColor = color;
-        if (select.value === 'yes') {
-            joshalScore++;
-        } else if (select.value === 'no') {
-            joshalScore--;
-        }
-    });
-
-    // Iterate through Poonam's goals
-    const poonamGoalMetSelects = document.querySelectorAll('#poonam-goals-table .goal-met-select');
-    poonamGoalMetSelects.forEach(select => {
-        const color = select.value === 'yes' ? 'green' : select.value === 'no' ? 'red' : 'orange';
-        select.style.backgroundColor = color;
-        if (select.value === 'yes') {
-            poonamScore++;
-        } else if (select.value === 'no') {
-            poonamScore--;
-        }
-    });
-
-    joshalScoreSpan.textContent = joshalScore;
-    poonamScoreSpan.textContent = poonamScore;
-}
+        const color = select.value === 'yes' ? 'green' : select.value === 'no' ?
