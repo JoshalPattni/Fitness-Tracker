@@ -32,7 +32,8 @@ label {
 
 input[type="number"],
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+input[type="password"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -49,4 +50,30 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#scoreboard p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+h3 {
+    color: #4CAF50;
 }
