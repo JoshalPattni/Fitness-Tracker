@@ -1,125 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshal and Poonam's Fitness Journey</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Joshal and Poonam's Fitness Journey</h1>
-    </header>
-    <main>
-        <section id="input-data">
-            <h2>Input Your Measurements</h2>
-            <div class="user-input" id="joshal-input">
-                <h3>Joshal</h3>
-                <label for="joshal-weight">Weight (kg):</label>
-                <input type="number" id="joshal-weight">
-                <label for="joshal-right-arm">Right Arm (cm):</label>
-                <input type="number" id="joshal-right-arm">
-                <label for="joshal-left-arm">Left Arm (cm):</label>
-                <input type="number" id="joshal-left-arm">
-                <label for="joshal-waist">Waist (cm):</label>
-                <input type="number" id="joshal-waist">
-                <label for="joshal-stomach">Stomach (cm):</label>
-                <input type="number" id="joshal-stomach">
-                <label for="joshal-chest">Chest (cm):</label>
-                <input type="number" id="joshal-chest">
-            </div>
-            <div class="user-input" id="poonam-input">
-                <h3>Poonam</h3>
-                <label for="poonam-weight">Weight (kg):</label>
-                <input type="number" id="poonam-weight">
-                <label for="poonam-waist">Waist (cm):</label>
-                <input type="number" id="poonam-waist">
-                <label for="poonam-stomach">Stomach (cm):</label>
-                <input type="number" id="poonam-stomach">
-                <label for="poonam-bum">Bum (cm):</label>
-                <input type="number" id="poonam-bum">
-            </div>
-
-            <h2>Input Your Goals</h2>
-            <div id="goals-table">
-                <h3>Joshal's Goals</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Weight (kg)</th>
-                            <th>Right Arm (cm)</th>
-                            <th>Left Arm (cm)</th>
-                            <th>Waist (cm)</th>
-                            <th>Stomach (cm)</th>
-                            <th>Chest (cm)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="joshal-goals">
-                        <tr>
-                            <td>Month 1</td>
-                            <td><input type="date" id="joshal-month1-start"></td>
-                            <td><input type="date" id="joshal-month1-end"></td>
-                            <td><input type="number" id="joshal-month1-weight"></td>
-                            <td><input type="number" id="joshal-month1-right-arm"></td>
-                            <td><input type="number" id="joshal-month1-left-arm"></td>
-                            <td><input type="number" id="joshal-month1-waist"></td>
-                            <td><input type="number" id="joshal-month1-stomach"></td>
-                            <td><input type="number" id="joshal-month1-chest"></td>
-                        </tr>
-                        <!-- Add more rows for additional months as needed -->
-                    </tbody>
-                </table>
-                <h3>Poonam's Goals</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Weight (kg)</th>
-                            <th>Waist (cm)</th>
-                            <th>Stomach (cm)</th>
-                            <th>Bum (cm)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="poonam-goals">
-                        <tr>
-                            <td>Month 1</td>
-                            <td><input type="date" id="poonam-month1-start"></td>
-                            <td><input type="date" id="poonam-month1-end"></td>
-                            <td><input type="number" id="poonam-month1-weight"></td>
-                            <td><input type="number" id="poonam-month1-waist"></td>
-                            <td><input type="number" id="poonam-month1-stomach"></td>
-                            <td><input type="number" id="poonam-month1-bum"></td>
-                        </tr>
-                        <!-- Add more rows for additional months as needed -->
-                    </tbody>
-                </table>
-            </div>
-
-            <h2>Rewards</h2>
-            <div class="reward-input">
-                <h3>Joshal's Reward</h3>
-                <label for="joshal-reward">Reward (up to £50):</label>
-                <input type="text" id="joshal-reward">
-            </div>
-            <div class="reward-input">
-                <h3>Poonam's Reward</h3>
-                <label for="poonam-reward">Reward (up to £50):</label>
-                <input type="text" id="poonam-reward">
-            </div>
-            <button id="save-data">Save Data</button>
-
-            <h2>Scoreboard</h2>
-            <div id="scoreboard">
-                <p>Joshal's Score: <span id="joshal-score">0</span></p>
-                <p>Poonam's Score: <span id="poonam-score">0</span></p>
-            </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+<!-- Add this inside the HTML body where appropriate -->
+<h2>Input Your Goals</h2>
+<div>
+    <h3>Joshal's Goals</h3>
+    <table id="joshal-goals">
+        <tr>
+            <th>Month</th>
+            <th>Weight (kg)</th>
+            <th>Right Arm (cm)</th>
+            <th>Left Arm (cm)</th>
+            <th>Waist (cm)</th>
+            <th>Stomach (cm)</th>
+            <th>Chest (cm)</th>
+        </tr>
+        <!-- Repeat for 6 months -->
+        <tr>
+            <td>Month 1</td>
+            <!-- Add inputs for each month -->
+        </tr>
+        <!-- Additional rows for months 2-6 -->
+    </table>
+    <h3>Poonam's Goals</h3>
+    <table id="poonam-goals">
+        <tr>
+            <th>Month</th>
+            <th>Weight (kg)</th>
+            <th>Waist (cm)</th>
+            <th>Stomach (cm)</th>
+            <th>Bum (cm)</th>
+        </tr>
+        <!-- Repeat for 6 months -->
+    </table>
+</div>
