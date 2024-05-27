@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshal and Poonam's Fitness Journey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Joshal and Poonam's Fitness Journey</h1>
+    </header>
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="input-data" class="hidden">
+            <h2>Input Your Measurements</h2>
+            <div class="user-input" id="joshal-input">
+                <h3>Joshal</h3>
+                <label for="joshal-weight">Weight:</label>
+                <input type="number" id="joshal-weight">
+                <label for="joshal-right-arm">Right Arm:</label>
+                <input type="number" id="joshal-right-arm">
+                <label for="joshal-left-arm">Left Arm:</label>
+                <input type="number" id="joshal-left-arm">
+                <label for="joshal-waist">Waist:</label>
+                <input type="number" id="joshal-waist">
+                <label for="joshal-stomach">Stomach:</label>
+                <input type="number" id="joshal-stomach">
+                <label for="joshal-chest">Chest:</label>
+                <input type="number" id="joshal-chest">
+            </div>
+            <div class="user-input" id="poonam-input">
+                <h3>Poonam</h3>
+                <label for="poonam-weight">Weight:</label>
+                <input type="number" id="poonam-weight">
+                <label for="poonam-waist">Waist:</label>
+                <input type="number" id="poonam-waist">
+                <label for="poonam-stomach">Stomach:</label>
+                <input type="number" id="poonam-stomach">
+                <label for="poonam-bum">Bum:</label>
+                <input type="number" id="poonam-bum">
+            </div>
+
+            <h2>Input Your Goals</h2>
+            <div class="goal-input" id="joshal-goals">
+                <h3>Joshal's Goals</h3>
+                <!-- Repeat inputs for each month -->
+                <label for="joshal-month1-start">Month 1 Start Date:</label>
+                <input type="date" id="joshal-month1-start">
+                <label for="joshal-month1-end">Month 1 End Date:</label>
+                <input type="date" id="joshal-month1-end">
+                <label for="joshal-month1-goal">Goal:</label>
+                <input type="text" id="joshal-month1-goal">
+            </div>
+            <div class="goal-input" id="poonam-goals">
+                <h3>Poonam's Goals</h3>
+                <!-- Repeat inputs for each month -->
+                <label for="poonam-month1-start">Month 1 Start Date:</label>
+                <input type="date" id="poonam-month1-start">
+                <label for="poonam-month1-end">Month 1 End Date:</label>
+                <input type="date" id="poonam-month1-end">
+                <label for="poonam-month1-goal">Goal:</label>
+                <input type="text" id="poonam-month1-goal">
+            </div>
+
+            <h2>Rewards</h2>
+            <div class="reward-input" id="joshal-reward">
+                <h3>Joshal's Reward</h3>
+                <label for="joshal-reward">Reward (up to £50):</label>
+                <input type="text" id="joshal-reward">
+            </div>
+            <div class="reward-input" id="poonam-reward">
+                <h3>Poonam's Reward</h3>
+                <label for="poonam-reward">Reward (up to £50):</label>
+                <input type="text" id="poonam-reward">
+            </div>
+            <button id="save-data">Save Data</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
