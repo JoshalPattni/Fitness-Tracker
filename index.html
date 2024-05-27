@@ -19,30 +19,62 @@
                     <label for="joshal-right-arm">Right Arm (cm):</label>
                     <input type="number" id="joshal-right-arm" placeholder="Enter measurement">
                     <!-- Add other measurement inputs for Joshal -->
+                    <label for="joshal-left-arm">Left Arm (cm):</label>
+                    <input type="number" id="joshal-left-arm" placeholder="Enter measurement">
+                    <label for="joshal-waist">Waist (cm):</label>
+                    <input type="number" id="joshal-waist" placeholder="Enter measurement">
+                    <label for="joshal-stomach">Stomach (cm):</label>
+                    <input type="number" id="joshal-stomach" placeholder="Enter measurement">
+                    <label for="joshal-chest">Chest (cm):</label>
+                    <input type="number" id="joshal-chest" placeholder="Enter measurement">
                 </div>
                 <div class="measurement">
                     <h3>Poonam</h3>
+                    <label for="poonam-chest">Chest (cm):</label>
+                    <input type="number" id="poonam-chest" placeholder="Enter measurement">
+                    <!-- Add other measurement inputs for Poonam -->
+                    <label for="poonam-stomach">Stomach (cm):</label>
+                    <input type="number" id="poonam-stomach" placeholder="Enter measurement">
                     <label for="poonam-waist">Waist (cm):</label>
                     <input type="number" id="poonam-waist" placeholder="Enter measurement">
-                    <!-- Add other measurement inputs for Poonam -->
+                    <label for="poonam-bum">Bum (cm):</label>
+                    <input type="number" id="poonam-bum" placeholder="Enter measurement">
                 </div>
             </div>
         </section>
         
         <section class="goals">
             <h2>Set Your Goals</h2>
-            <table id="goals-table">
-                <thead>
-                    <tr>
-                        <th>Month</th>
-                        <th>Goal Detail</th>
-                        <th>Met?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Rows for goals will be added dynamically -->
-                </tbody>
-            </table>
+            <div class="goal-section">
+                <h3>Joshal's Goals</h3>
+                <table class="goal-table" id="joshal-goals-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Goal Detail</th>
+                            <th>Met?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows for Joshal's goals will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="goal-section">
+                <h3>Poonam's Goals</h3>
+                <table class="goal-table" id="poonam-goals-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Goal Detail</th>
+                            <th>Met?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows for Poonam's goals will be added dynamically -->
+                    </tbody>
+                </table>
+            </div>
         </section>
         
         <section class="rewards">
@@ -60,7 +92,8 @@
         <button onclick="saveData()">Save Data</button>
     </main>
     <footer>
-        <p class="score">Score: <span id="score">0</span></p>
+        <p class="score">Joshal's Score: <span id="joshal-score">0</span></p>
+        <p class="score">Poonam's Score: <span id="poonam-score">0</span></p>
         <p class="winner">The winner gets a prize worth up to £500!</p>
     </footer>
     <script src="script.js"></script>
