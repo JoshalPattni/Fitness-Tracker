@@ -1,37 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    populateGoalsTable();
+    populateGoalsTables();
 });
 
-function populateGoalsTable() {
-    const table = document.getElementById('goals-table');
+function populateGoalsTables() {
+    const joshalTable = document.getElementById('joshal-goals-table');
+    const poonamTable = document.getElementById('poonam-goals-table');
     const months = ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
+    
     months.forEach(month => {
-        const row = table.insertRow();
-        const monthCell = row.insertCell(0);
-        monthCell.textContent = month;
+        const joshalRow = joshalTable.insertRow();
+        const joshalMonthCell = joshalRow.insertCell(0);
+        joshalMonthCell.textContent = month;
 
-        const goalCell = row.insertCell(1);
-        const goalInput = document.createElement('input');
-        goalInput.type = 'text';
-        goalCell.appendChild(goalInput);
+        const joshalGoalCell = joshalRow.insertCell(1);
+        const joshalGoalInput = document.createElement('input');
+        joshalGoalInput.type = 'text';
+        joshalGoalCell.appendChild(joshalGoalInput);
 
-        const metCell = row.insertCell(2);
-        const metCheckbox = document.createElement('input');
-        metCheckbox.type = 'checkbox';
-        metCheckbox.addEventListener('change', updateScore);
-        metCell.appendChild(metCheckbox);
+        const joshalMetCell = joshalRow.insertCell(2);
+        const joshalMetCheckbox = document.createElement('input');
+        joshalMetCheckbox.type = 'checkbox';
+        joshalMetCell.appendChild(joshalMetCheckbox);
+
+        const poonamRow = poonamTable.insertRow();
+        const poonamMonthCell = poonamRow.insertCell(0);
+        poonamMonthCell.textContent = month;
+
+        const poonamGoalCell = poonamRow.insertCell(1);
+        const poonamGoalInput = document.createElement('input');
+        poonamGoalInput.type = 'text';
+        poonamGoalCell.appendChild(poonamGoalInput);
+
+        const poonamMetCell = poonamRow.insertCell(2);
+        const poonamMetCheckbox = document.createElement('input');
+        poonamMetCheckbox.type = 'checkbox';
+        poonamMetCell.appendChild(poonamMetCheckbox);
     });
-}
-
-function updateScore() {
-    let score = 0;
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-            score += 1;
-        }
-    });
-    document.getElementById('score').textContent = score;
 }
 
 function saveData() {
@@ -39,3 +43,6 @@ function saveData() {
     console.log('Data saved!');
     // This would involve storing data in localStorage or a server-side database.
 }
+
+// Function to calculate scores
+function updateScores
