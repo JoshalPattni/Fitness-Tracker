@@ -1,3 +1,7 @@
+// Define variables to store goals for Joshal and Poonam
+let joshalGoals = [];
+let poonamGoals = [];
+
 // Function to add a goal for either Joshal or Poonam
 function addGoal(user) {
     const measurementName = document.getElementById(`${user}-measurement-name`).value;
@@ -18,11 +22,14 @@ function addGoal(user) {
     // Fill cells with data
     monthCell.textContent = `${month} ${year}`;
     detailCell.textContent = `${measurementName}: ${goal} cm/kg`;
-    metCell.innerHTML = `<select onchange="updateScoreCard()" class="goal-met-select">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        <option value="same">Stayed the same</option>
-    </select>`;
+    metCell.innerHTML = `<select onchange="updateScoreCard()"><option value="yes">Yes</option><option value="no">No</option><option value="same">Stayed the same</option></select>`;
+    
+    // Update the corresponding goals array
+    if (user === 'joshal') {
+        joshalGoals.push({ measurementName, goal });
+    } else {
+        poonamGoals.push({ measurementName, goal });
+    }
 }
 
 // Function to update the score card
@@ -34,6 +41,23 @@ function updateScoreCard() {
     let poonamScore = 0;
 
     // Iterate through Joshal's goals
-    const joshalGoalMetSelects = document.querySelectorAll('#joshal-goals-table .goal-met-select');
-    joshalGoalMetSelects.forEach(select => {
-        const color = select.value === 'yes' ? 'green' : select.value === 'no' ?
+    joshalGoals.forEach(goal => {
+        const select = document.querySelector('#joshal-goals-table select:last-child');
+        if (select.value === 'yes') {
+            joshalScore++;
+        } else if (select.value === 'no') {
+            joshalScore--;
+        }
+    });
+
+    // Iterate through Poonam's goals
+    poonamGoals.forEach(goal => {
+        const select = document.querySelector('#poonam-goals-table select:last-child');
+        if (select.value === 'yes') {
+            poonamScore++;
+        } else if (select.value === 'no') {
+            poonamScore--;
+        }
+    });
+
+    //
