@@ -4,26 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function populateGoalsTable() {
     const table = document.getElementById('goals-table');
-    for (let i = 1; i <= 6; i++) {
+    const months = ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
+    months.forEach(month => {
         const row = table.insertRow();
-        const monthCell = row.insertCell();
-        monthCell.textContent = `Month ${i}`;
-        
-        const goalCell = row.insertCell();
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.placeholder = 'Enter goal...';
-        goalCell.appendChild(input);
+        const monthCell = row.insertCell(0);
+        monthCell.textContent = month;
 
-        const metCell = row.insertCell();
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', function() {
-            updateScore();
-            row.style.backgroundColor = checkbox.checked ? 'lightgreen' : 'salmon';
-        });
-        metCell.appendChild(checkbox);
-    }
+        const goalCell = row.insertCell(1);
+        const goalInput = document.createElement('input');
+        goalInput.type = 'text';
+        goalCell.appendChild(goalInput);
+
+        const metCell = row.insertCell(2);
+        const metCheckbox = document.createElement('input');
+        metCheckbox.type = 'checkbox';
+        metCheckbox.addEventListener('change', updateScore);
+        metCell.appendChild(metCheckbox);
+    });
 }
 
 function updateScore() {
