@@ -16,78 +16,39 @@
             <div class="user-measurements">
                 <div class="measurement">
                     <h3>Joshal</h3>
-                    <label for="joshal-right-arm">Right Arm (cm):</label>
-                    <input type="number" id="joshal-right-arm" placeholder="Enter measurement">
-                    <label for="joshal-left-arm">Left Arm (cm):</label>
-                    <input type="number" id="joshal-left-arm" placeholder="Enter measurement">
-                    <label for="joshal-waist">Waist (cm):</label>
-                    <input type="number" id="joshal-waist" placeholder="Enter measurement">
-                    <label for="joshal-stomach">Stomach (cm):</label>
-                    <input type="number" id="joshal-stomach" placeholder="Enter measurement">
-                    <label for="joshal-chest">Chest (cm):</label>
-                    <input type="number" id="joshal-chest" placeholder="Enter measurement">
+                    <label for="joshal-measurement-name">Measurement Name:</label>
+                    <select id="joshal-measurement-name">
+                        <option value="right-arm">Right Arm</option>
+                        <option value="left-arm">Left Arm</option>
+                        <option value="waist">Waist</option>
+                        <option value="stomach">Stomach</option>
+                        <option value="chest">Chest</option>
+                    </select>
+                    <label for="joshal-goal">Goal (cm/kg):</label>
+                    <input type="number" id="joshal-goal" placeholder="Enter goal">
+                    <button onclick="addGoal('joshal')">Add Goal</button>
+                    <table class="goal-table" id="joshal-goals-table">
+                        <!-- Goals will be added dynamically here -->
+                    </table>
                 </div>
                 <div class="measurement">
                     <h3>Poonam</h3>
-                    <label for="poonam-chest">Chest (cm):</label>
-                    <input type="number" id="poonam-chest" placeholder="Enter measurement">
-                    <label for="poonam-stomach">Stomach (cm):</label>
-                    <input type="number" id="poonam-stomach" placeholder="Enter measurement">
-                    <label for="poonam-waist">Waist (cm):</label>
-                    <input type="number" id="poonam-waist" placeholder="Enter measurement">
-                    <label for="poonam-bum">Bum (cm):</label>
-                    <input type="number" id="poonam-bum" placeholder="Enter measurement">
+                    <label for="poonam-measurement-name">Measurement Name:</label>
+                    <select id="poonam-measurement-name">
+                        <option value="chest">Chest</option>
+                        <option value="stomach">Stomach</option>
+                        <option value="waist">Waist</option>
+                        <option value="bum">Bum</option>
+                    </select>
+                    <label for="poonam-goal">Goal (cm/kg):</label>
+                    <input type="number" id="poonam-goal" placeholder="Enter goal">
+                    <button onclick="addGoal('poonam')">Add Goal</button>
+                    <table class="goal-table" id="poonam-goals-table">
+                        <!-- Goals will be added dynamically here -->
+                    </table>
                 </div>
             </div>
         </section>
-        
-        <section class="goals">
-            <h2>Set Your Goals</h2>
-            <div class="goal-section">
-                <h3>Joshal's Goals</h3>
-                <table class="goal-table" id="joshal-goals-table">
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Goal Detail and Month Goal</th>
-                            <th>Goal Met?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows for Joshal's goals will be added dynamically -->
-                    </tbody>
-                </table>
-            </div>
-            <div class="goal-section">
-                <h3>Poonam's Goals</h3>
-                <table class="goal-table" id="poonam-goals-table">
-                    <thead>
-                        <tr>
-                            <th>Month</th>
-                            <th>Goal Detail and Month Goal</th>
-                            <th>Goal Met?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows for Poonam's goals will be added dynamically -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        
-        <section class="rewards">
-            <h2>Rewards</h2>
-            <div class="reward-input">
-                <label for="joshal-reward">Joshal's Reward:</label>
-                <input type="text" id="joshal-reward" placeholder="Enter reward">
-            </div>
-            <div class="reward-input">
-                <label for="poonam-reward">Poonam's Reward:</label>
-                <input type="text" id="poonam-reward" placeholder="Enter reward">
-            </div>
-        </section>
-        
-        <button onclick="saveData()">Save Data</button>
     </main>
     <footer>
         <p class="score">Joshal's Score: <span id="joshal-score">0</span></p>
