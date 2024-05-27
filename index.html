@@ -1,33 +1,76 @@
-<!-- Add this inside the HTML body where appropriate -->
-<h2>Input Your Goals</h2>
-<div>
-    <h3>Joshal's Goals</h3>
-    <table id="joshal-goals">
-        <tr>
-            <th>Month</th>
-            <th>Weight (kg)</th>
-            <th>Right Arm (cm)</th>
-            <th>Left Arm (cm)</th>
-            <th>Waist (cm)</th>
-            <th>Stomach (cm)</th>
-            <th>Chest (cm)</th>
-        </tr>
-        <!-- Repeat for 6 months -->
-        <tr>
-            <td>Month 1</td>
-            <!-- Add inputs for each month -->
-        </tr>
-        <!-- Additional rows for months 2-6 -->
-    </table>
-    <h3>Poonam's Goals</h3>
-    <table id="poonam-goals">
-        <tr>
-            <th>Month</th>
-            <th>Weight (kg)</th>
-            <th>Waist (cm)</th>
-            <th>Stomach (cm)</th>
-            <th>Bum (cm)</th>
-        </tr>
-        <!-- Repeat for 6 months -->
-    </table>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshal and Poonam's Fitness Journey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Joshal and Poonam's Fitness Journey</h1>
+    </header>
+
+    <section>
+        <h2>Current Measurements</h2>
+        <div>
+            <h3>Joshal</h3>
+            <label for="joshal-weight">Weight (kg):</label>
+            <input type="number" id="joshal-weight" min="0"><br>
+            <label for="joshal-right-arm">Right Arm (cm):</label>
+            <input type="number" id="joshal-right-arm" min="0"><br>
+            <label for="joshal-left-arm">Left Arm (cm):</label>
+            <input type="number" id="joshal-left-arm" min="0"><br>
+            <label for="joshal-waist">Waist (cm):</label>
+            <input type="number" id="joshal-waist" min="0"><br>
+            <label for="joshal-stomach">Stomach (cm):</label>
+            <input type="number" id="joshal-stomach" min="0"><br>
+            <label for="joshal-chest">Chest (cm):</label>
+            <input type="number" id="joshal-chest" min="0"><br>
+        </div>
+        <div>
+            <h3>Poonam</h3>
+            <label for="poonam-weight">Weight (kg):</label>
+            <input type="number" id="poonam-weight" min="0"><br>
+            <label for="poonam-waist">Waist (cm):</label>
+            <input type="number" id="poonam-waist" min="0"><br>
+            <label for="poonam-stomach">Stomach (cm):</label>
+            <input type="number" id="poonam-stomach" min="0"><br>
+            <label for="poonam-bum">Bum (cm):</label>
+            <input type="number" id="poonam-bum" min="0"><br>
+        </div>
+    </section>
+
+    <section>
+        <h2>Input Your Goals</h2>
+        <table id="goals-table">
+            <tr>
+                <th></th>
+                <th>Weight (kg)</th>
+                <th>Right Arm (cm)</th>
+                <th>Left Arm (cm)</th>
+                <th>Waist (cm)</th>
+                <th>Stomach (cm)</th>
+                <th>Chest (cm)</th>
+                <th>Bum (cm)</th>
+            </tr>
+            <!-- This section will be dynamically filled by JavaScript -->
+        </table>
+    </section>
+
+    <section>
+        <h2>Rewards</h2>
+        <label for="joshal-reward">Joshal's Reward:</label>
+        <input type="text" id="joshal-reward"><br>
+        <label for="poonam-reward">Poonam's Reward:</label>
+        <input type="text" id="poonam-reward"><br>
+    </section>
+
+    <button onclick="saveData()">Save Data</button>
+
+    <footer>
+        <p>Designed by Joshal and Poonam</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
