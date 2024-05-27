@@ -1,16 +1,3 @@
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    if (username === 'JoshalPoonam' && password === 'Kume') {
-        loadData();
-        document.getElementById('login').classList.add('hidden');
-        document.getElementById('input-data').classList.remove('hidden');
-    } else {
-        alert('Incorrect username or password!');
-    }
-});
-
 document.getElementById('save-data').addEventListener('click', function() {
     const data = {
         joshal: {
@@ -117,8 +104,6 @@ function calculateScores() {
 
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('fitnessData')) {
-        document.getElementById('login').classList.add('hidden');
-        document.getElementById('input-data').classList.remove('hidden');
         loadData();
     }
 });
